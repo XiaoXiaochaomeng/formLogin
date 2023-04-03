@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="form.css">
+    <title>Đăng nhập</title>
+</head>
+
+<body>
+    <button id="loginBtn">Đăng nhập hệ thống</button>
+
+    <div id="wapper">
+        <div id="content">
+            <span class="close">&times;</span>
+            <div id="wapperForm">
+                <p>Member Login</p>
+                <form id="loginForm">
+                    <div class="input">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="username" name="username" placeholder="Username"><br>
+                    </div>
+                    <div class="error"><span id="usernameError" class="error"></span></div>
+                    <div class="input">
+                        <i class="fa-sharp fa-solid fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Password"><br>
+                    </div>
+                    <div class="error"><span id="passwordError" class="error"></span></div>
+                    <button type="submit" id="loginSubmit" onclick="loading()">Login</button>
+                </form>
+            </div>
+            <div id="forgotPassword">
+                <a href="#" onclick="forgot()">Forgot Password ?</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Đổi mật khẩu -->
+    <div id="container">
+        <div id="passwordNew" class="d-none">
+            <span class="close-2">&times;</span>
+            <div id="wapperPassword">
+                <p>Change Password</p>
+                <form id="passwordForm">
+                    <div class="input">
+                        <i class="fa-solid fa-lock fa-lock"></i>
+                        <input type="password" id="old-password" name="old-password" placeholder="OldPassword">
+                    </div>
+                    <div class="error"><span id="oldPasswordError" class="error"></span></div>
+                    <div class="input">
+                        <i class="fa-solid fa-lock fa-lock"></i>
+                        <input type="password" id="new-password" name="new-password" placeholder="NewPassword">
+                    </div>
+                    <div class="error"><span id="newPasswordError" class="error"></span></div>
+                    <button type="submit" id="password-submit">Save</button>
+                </form>
+            </div>
+            <div id="success-message">
+                <a href="#" onclick="backSave()">Back</a>
+            </div>
+        </div>
+
+    </div>
+    <script src="form.js"></script>
+
+</body>
+
+</html>

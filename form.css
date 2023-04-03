@@ -1,0 +1,235 @@
+#loginBtn{
+    border: none;
+    background-color: #4CAF50;
+    padding: 5px;
+    border-radius: 2px;
+    cursor: pointer;
+    color: white;
+}
+
+#loginBtn:hover{
+    background-color: #3e8e41;
+}
+
+#loginBtn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+
+#wapper{
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.5); 
+}
+
+#wapperForm p{
+    font-size: 24px;
+    margin: 0 0 20px 0;
+}
+
+#content{
+    background-color: #fefefe;
+    margin: 15% auto;
+    border: 1px solid #888;
+    width: 320px;
+    height: 320px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#wapperForm{
+    width: 100%;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#loginForm{
+    width: 80%;
+}
+
+.input{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border: 2px outset #aaaaaa;
+    margin: 10px 0 0 0; 
+    border-radius: 5px;   
+}
+
+#username, #password{
+    width: 80%;
+    border: none;
+    padding: 10px 20px 10px 10px;
+    outline: none;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    margin-right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#forgotPassword{
+    width: 100%;
+    height: 50px;
+    margin: 18px 0 0 0;
+    background-color: #9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#forgotPassword a{
+    text-decoration: none;
+    color: #888;
+    margin: 0;
+    padding: 20px;
+}
+
+#loginSubmit {
+    background-color: #00ce81;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  #loginSubmit:hover {
+    background-color: #00ce80;
+  }
+  
+  #loginSubmit:active {
+    background-color: #00ce80;
+    box-shadow: 0 2px #666;
+    transform: translateY(3px);
+  }
+
+#usernameError, #passwordError{
+    color: red;
+    font-size: 12px;
+}
+
+#oldPasswordError, #newPasswordError {
+    color: red;
+    font-size: 12px;
+}
+
+.error{
+    width: 100%;
+    height: 10px;
+}
+
+#passwordNew{
+    background-color: #fefefe;
+    margin: 15% auto;
+    border: 1px solid #888;
+    width: 320px;
+    height: 320px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.close-2{
+    color: #aaaaaa;
+    float: right;
+    margin-right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#passwordForm{
+    width: 80%;
+}
+
+#wapperPassword{
+    width: 100%;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#wapperPassword p{
+    font-size: 24px;
+    margin: 0 0 20px 0;
+}
+
+#success-message{
+    width: 100%;
+    height: 50px;
+    margin: 18px 0 0 0;
+    background-color: #9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#old-password, #new-password{
+    width: 80%;
+    border: none;
+    padding: 10px 20px 10px 10px;
+    outline: none;
+}
+
+#password-submit{
+    background-color: #00ce81;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#password-submit:hover{
+    background-color: #00ce80;
+}
+
+#password-submit:active {
+    background-color: #00ce80;
+    box-shadow: 0 2px #666;
+    transform: translateY(3px);
+  }
+
+#success-message a{
+    text-decoration: none;
+    color: #888;
+    margin: 0;
+    padding: 20px 30px;
+}
+
+#container{
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.5); 
+}
