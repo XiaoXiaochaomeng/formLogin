@@ -214,7 +214,7 @@
 }
 
 #password-submit:active {
-    background-color: #00ce80;
+    background-color: #00ce81;
     box-shadow: 0 2px #666;
     transform: translateY(3px);
 }

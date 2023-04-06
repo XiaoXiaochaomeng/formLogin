@@ -21,7 +21,7 @@ let oldPasswordError = document.getElementById("oldPasswordError");
 let newPasswordError = document.getElementById("newPasswordError");
 
 
-let savedPassword = "admin";
+let password = "admin";
 
 loginBtn.addEventListener("click", () => {
     loginWapper.style.display = "block";
@@ -32,7 +32,7 @@ loginClose.addEventListener("click", () => {
 })
 
 
-handleSubmit = () => {
+handleLogin = () => {
     if (!usernameInput.value.trim() || !passwordInput.value.trim()) {
         if (!usernameInput.value.trim()) {
             usernameError.innerHTML = "Vui lòng nhập tên đăng nhập";
@@ -47,20 +47,37 @@ handleSubmit = () => {
         return;
     }
 
-    if (usernameInput.value.trim() !== "admin" || passwordInput.value.trim() !== savedPassword) {
+    if (usernameInput.value.trim() !== "admin" || passwordInput.value.trim() !== password) {
         passwordError.innerHTML = "Tài khoản hoặc mật khẩu không đúng";
         return;
     }
 
     if (true) {
+        setTimeout(() => {
+            loginWapper.style.display = "none";
+        }, 1000);
         loginBtn.innerHTML = "Đăng nhập thành công";
+        usernameError.innerHTML = "";
+        passwordError.innerHTML = "";
+        usernameInput.value = "";
+        passwordInput.value = "";
+        passwordNotification.innerHTML = "";
     }
+}
+loginForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    handleLogin();
+})
 
+loading = () => {
+    loginSubmit.innerHTML = "Loading...";
+    setTimeout(() => {
+        handleLogin();
+        loginSubmit.innerHTML = "Login";
+    }, 1000);
 }
 
-passwordForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
+handleChange = () => {
     if (!oldPassword.value.trim() || !newPassword.value.trim()) {
         if (!oldPassword.value.trim()) {
             oldPasswordError.innerHTML = "Vui lòng nhập mật khẩu";
@@ -75,24 +92,41 @@ passwordForm.addEventListener("submit", (event) => {
         return;
     }
 
-    if (oldPassword.value.trim() !== savedPassword) {
+    if (oldPassword.value.trim() !== password) {
         oldPasswordError.innerHTML = "Mật khẩu không đúng";
         return;
+    } else {
+        oldPasswordError.innerHTML = "";
     }
 
-    savedPassword = newPassword;
+    if (newPassword.value.trim() === password) {
+        newPasswordError.innerHTML = "Mật khẩu mới phải khác mật khẩu cũ";
+        return;
+    } else {
+        newPasswordError.innerHTML = "";
+    }
 
-    passwordContainer.style.display = "none";
-    loginWapper.style.display = "block";
-    loginBtn.innerHTML = "Đăng nhập";
-    passwordNotification.innerHTML = "Bạn đã đổi mật khẩu thành công";
-    oldPassword.value = "";
-    newPassword.value = "";
+    if (true) {
+        password = newPassword.value.trim();
+        passwordContainer.style.display = "none";
+        loginWapper.style.display = "block";
+        loginBtn.innerHTML = "Đăng nhập hệ thống";
+        passwordNotification.innerHTML = "Bạn đã đổi mật khẩu thành công";
+        oldPassword.value = "";
+        newPassword.value = "";
+    }
+}
+
+passwordForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    handleChange();
 })
 
 forgot = () => {
     loginWapper.style.display = "none";
     passwordContainer.style.display = "block";
+    usernameError.innerHTML = "";
+    passwordError.innerHTML = "";
 }
 
 loginClose2.addEventListener("click", () => {
@@ -102,12 +136,8 @@ loginClose2.addEventListener("click", () => {
 backSave = () => {
     passwordContainer.style.display = "none";
     loginWapper.style.display = "block";
+    newPasswordError.innerHTML = "";
+    oldPasswordError.innerHTML = "";
 }
 
-loading = () => {
-    loginSubmit.innerHTML = "Loading...";
-    setTimeout(() => {
-        handleSubmit();
-        loginSubmit.innerHTML = "Login";
-    }, 1000);
-}
+
